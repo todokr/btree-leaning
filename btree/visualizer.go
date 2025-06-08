@@ -11,13 +11,13 @@ const (
 	RightBranch  = "└"
 	Branch       = "├"
 	Limb         = "──"
-	Trunk        = "│   "
+	Trunk        = "│    "
 	LastPosition = -1
 )
 
 var (
-	ColorEven = color.New(color.FgHiYellow)
-	ColorOdd  = color.New(color.FgHiCyan)
+	ColorEven = color.New(color.FgHiGreen)
+	ColorOdd  = color.New(color.FgHiYellow)
 )
 
 type visualizer struct {

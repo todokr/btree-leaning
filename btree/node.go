@@ -30,15 +30,14 @@ func (n *node) search(key []byte) (int, bool) {
 	for low < high {
 		mid = (low + high) / 2
 		cmp := bytes.Compare(key, n.items[mid].key)
-		if cmp > 0 {
+		switch {
+		case cmp > 0:
 			low = mid + 1
-			break
-		}
-		if cmp < 0 {
+		case cmp < 0:
 			high = mid
-			break
+		case cmp == 0:
+			return mid, true
 		}
-		return mid, true
 	}
 	return low, false
 }
